@@ -1,0 +1,210 @@
+@charset "UTF-8";
+body,
+h1, h2, h3, h4, h5, h6,
+blockquote, dl, dd, figure, ol, ul, p, pre {
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  overflow-y: scroll;
+}
+
+body {
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  -webkit-overflow-scrolling: touch;
+}
+
+html, body {
+  height: 100%;
+}
+
+a {
+  -webkit-touch-callout: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+a:active, a:focus,
+button:focus, input[type="button"] {
+  outline: none;
+}
+
+article, aside, details, figure, figcaption, footer, header, main, nav, section {
+  display: block;
+}
+
+address, em, i {
+  font-style: normal;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  border: 0;
+}
+
+ol, ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  vertical-align: top;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+tr {
+  vertical-align: top;
+}
+
+th, td {
+  padding: 0;
+}
+
+.cf {
+  zoom: 1;
+}
+.cf:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+body {
+  font-family: "メイリオ", "Meiryo", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "ＭＳ Ｐゴシック", "MS PGothic", "Osaka", sans-serif;
+  padding: 30px;
+}
+
+p {
+  margin-bottom: 30px;
+}
+
+i {
+  letter-spacing: 5px;
+}
+
+/* Smart Drawer
+   ========================================================================== */
+#sd {
+  width: 350px;
+  height: 100%;
+  color: white;
+  overflow: auto;
+  position: fixed;
+  left: -350px;
+  top: 0;
+  z-index: 99;
+  padding: 20px 10px;
+  transition: -webkit-transform 0.3s ease-out;
+  transition: transform 0.3s ease-out;
+  background: #333;
+}
+@media screen and (max-width: 400px) {
+  #sd {
+    width: 300px;
+    left: -300px;
+  }
+}
+#sd li {
+  padding: 10px;
+  border-top: 1px solid #404040;
+  border-bottom: 1px solid #262626;
+}
+#sd li:first-child {
+  border-top: 0;
+}
+#sd li:last-child {
+  border-bottom: 0;
+}
+#sd.block {
+  -webkit-transform: translate3d(350px, 0, 0);
+  transform: translate3d(350px, 0, 0);
+}
+@media screen and (max-width: 400px) {
+  #sd.block {
+    -webkit-transform: translate3d(300px, 0, 0);
+    transform: translate3d(300px, 0, 0);
+  }
+}
+#sd.block:not(:target) {
+  left: 0\9;
+}
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  #sd.block-ie10 {
+    -webkit-transform: translate3d(350px, 0, 0) !important;
+    transform: translate3d(350px, 0, 0) !important;
+  }
+}
+#sd .close {
+  display: block;
+  position: relative;
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #262626;
+}
+#sd .close:hover {
+  cursor: pointer;
+  background: #404040;
+}
+#sd .close:after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 1px solid #404040;
+}
+
+.sd-trigger {
+  width: 200px;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  margin-bottom: 30px;
+  padding: 10px 20px;
+  display: block;
+  background: #333;
+}
+.sd-trigger:hover {
+  cursor: pointer;
+  text-decoration: underline;
+  background: #4d4d4d;
+}
+
+#sd-overlay {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  transition: 0.3s;
+  background: rgba(0, 0, 0, 0.5);
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0;
+}
+#sd-overlay.block {
+  z-index: 9;
+  filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
+  opacity: 1;
+}
+
+#sd-overlay-android {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  display: none;
+  background: rgba(0, 0, 0, 0.5);
+}
