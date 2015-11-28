@@ -171,16 +171,14 @@ i {
   color: white;
   text-decoration: none;
   text-align: center;
-  vertical-align:middle;
-
-  
-  display: block;
+    
+  display: inline-block;
   background: #333;
 }
 
 .sd-trigger:hover {
   cursor: pointer;
-  text-decoration: underline;
+  text-decoration: blink;
   background: #4d4d4d;
 }
 
