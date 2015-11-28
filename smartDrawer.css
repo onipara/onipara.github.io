@@ -171,6 +171,8 @@ i {
   color: white;
   text-decoration: none;
   text-align: center;
+  vertical-align:middle;
+
   
   display: block;
   background: #333;
