@@ -171,10 +171,9 @@ i {
   color: white;
   text-decoration: none;
   text-align: center;
-  display: table-cell;
   vertical-align: middle;
     
-  display: inline-block;
+  display: table-cell;
   background: #444444;
 }
 
